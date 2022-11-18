@@ -111,7 +111,7 @@
 !               for each HRU for each day of the year.
 !***********************************************************************
       INTEGER FUNCTION sthinit()
-      USE PRMS_CONSTANTS, ONLY: MAX_DAYS_PER_YEAR, DEBUG_SOLTAB, DEBUG_WB_SOLTAB, OFF
+      USE PRMS_CONSTANTS, ONLY: MAX_DAYS_PER_YEAR, DEBUG_SOLTAB, DEBUG_WB, OFF
       USE PRMS_MODULE, ONLY: Nhru, Print_debug, Glacier_flag
       USE PRMS_SOLTAB
       USE PRMS_BASIN, ONLY: Hru_type, Active_hrus, Hru_route_order, Basin_lat, Hru_lat
@@ -183,7 +183,7 @@
       CALL compute_soltab(obliquity, Solar_declination, 0.0, 0.0, lat, basin_cossl, &
      &                    Soltab_basinpotsw, basin_sunhrs, 0, 0)
 
-      IF ( Print_debug==DEBUG_SOLTAB .OR. Print_debug==DEBUG_WB_SOLTAB ) THEN
+      IF ( Print_debug==DEBUG_SOLTAB .OR. Print_debug==DEBUG_WB ) THEN
         output_path = 'soltab_debug'
         PRINT *, ''
         PRINT *, 'soltab debug data written to: ', output_path
