@@ -146,6 +146,8 @@ MODULE PRMS_CONSTANTS
     integer, parameter :: DEBUG_normal = 0
     integer, parameter :: DEBUG_WB = 1
     integer, parameter :: DEBUG_SOLTAB = 5
+    integer, parameter :: DEBUG_WB_SOLTAB = 6
+
 
 ! module flags
     integer, parameter :: precip_1sta_module = 1, precip_laps_module = 2, precip_dist2_module = 3

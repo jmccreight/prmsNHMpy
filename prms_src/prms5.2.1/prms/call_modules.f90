@@ -3,7 +3,7 @@
 !***********************************************************************
       MODULE PRMS_MODULE
     USE ISO_FORTRAN_ENV
-    USE PRMS_CONSTANTS, ONLY: MAX_DAYS_PER_YEAR, DEBUG_minimum, DEBUG_less, DEBUG_WB, &
+    USE PRMS_CONSTANTS, ONLY: MAX_DAYS_PER_YEAR, DEBUG_minimum, DEBUG_less, DEBUG_WB, DEBUG_WB_SOLTAB, &
    &    RUN, DECL, INIT, SETDIMENS, CLEAN, ACTIVE, OFF, ERROR_dim, ERROR_open_out, ERROR_param, ERROR_restart, &
    &    PRMS, CASCADE_NORMAL, CASCADE_HRU_SEGMENT, CASCADE_OFF, &
    &    CASCADEGW_SAME, CASCADEGW_OFF, CLIMATE, FROST, TRANSPIRE, WRITE_CLIMATE, POTET, CONVERT, &
@@ -409,7 +409,7 @@
         IF ( ierr/=0 ) CALL module_error('basin_sum', Arg, ierr)
       ENDIF
 
-      IF ( Print_debug==DEBUG_WB ) CALL water_balance()
+      IF ( Print_debug==DEBUG_WB .OR. Print_debug==DEBUG_WB_SOLTAB) CALL water_balance()
 
       IF ( MapOutON_OFF>OFF ) THEN
         ierr = map_results()
