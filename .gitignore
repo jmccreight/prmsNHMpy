@@ -78,7 +78,7 @@ pywatershed/data/pywatershed_gis
 
 # f2y detritus
 *module.c
-PRMS*.so
+prms*.so
 *f2pywrappers*.f*
 
 # starfit repo used for development

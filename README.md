@@ -1,13 +1,12 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+**Table of Contents**
 
 - [pywatershed](#pywatershed)
   - [Purpose](#purpose)
   - [Installation](#installation)
   - [Contributing](#contributing)
   - [Example Notebooks](#example-notebooks)
-  - [Overview of Repository Contents](#overview-of-repository-contents)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -63,31 +62,39 @@ To install the software you will need Python 3.9 or 3.10.
 
 We currently recommend dependencies be installed with
 [Mamba](https://mamba.readthedocs.io/en/latest/) which will be much faster than
-Ananconda (but the conda command can also be used). An environment containing
-all core and optional dependencies can be created from the project root with:
+Ananconda (but the conda command can be used in mamba). An environment
+containing all core and optional dependencies can be created from the project
+root with:
 
 ``` mamba env create -f environment_w_jupyter.yml ```
 
-(The environment `environment.yml` does not contain jupyter or jupyterlab
-in order to not interfere with installation in WholeTale, see Example
-Notebooks seection below.)
+(The environment `environment.yml` does not contain jupyter or jupyterlab in
+order to not interfere with installation in WholeTale, see Example Notebooks
+seection below.)
 
 The `pywatershed` package is [available on
-PyPI](https://pypi.org/project/pywatershed/). At the moment, the installation
-may not be reliable on all platforms and we are working to fix this.
+PyPI](https://pypi.org/project/pywatershed/). At the moment, the installation of
+dependencies may not be reliable on all platforms and so using a mamba
+environment is required. We are working to ensure PyPI provides the correct
+dependencies in the future.
 
 Using PyPI (with the above caveat), `pywatershed` can be installed with:
 
 ``` pip install pywatershed ```
 
-A number of extra dependencies are needed to run the example notebooks. These
-can be installed with pip with
+You may also elect to clone the repository from github and, in the root of the
+repository, run ``` pip install . ```
 
-``` pip install "pywatershed[optional]" ```
+From more advanced installation and developer instructions, see [developer
+documentation](./DEVELOPER.md) .
 
-These installation steps are suitable for `pywatershed` end users. See the
-[developer documentation](./DEVELOPER.md) for detailed instructions on
-configuring a development environment.
+<!-- A number of extra dependencies are needed to run the example notebooks. These
+<!-- can be installed with pip with
+<!--
+<!-- ``` pip install "pywatershed[optional]" ```  -->
+<!-- These installation steps are suitable for `pywatershed` end users. See the  -->
+<!-- [developer documentation](./DEVELOPER.md) for detailed instructions on  -->
+<!-- configuring a development environment. -->
 
 ## Contributing
 
@@ -98,22 +105,35 @@ contribute to this project.
 ## Example Notebooks
 
 Jupyter notebooks containing examples are found in the `examples/` directory.
-Numbered notebooks in this directory are tested in CI. The notebooks may be run
-using [WholeTale](https://wholetale.org/). Non-numbered notebooks
+Numbered notebooks in this directory are tested in CI. Non-numbered notebooks
 coveradditional topics. These notebooks are note yet covered by testing and so
-may be expected to have some issues until they are added to testing. There are
-containers for both the `main` and `develop` branches. The develop container may
-require the user to update the repository to stay current with
-development. WholeTale will give you a jupyter-lab running in the root of this
-repository. You can navigate to `examples` and then open and run the notebooks
-of your choice. This is a very easy and quick way to get started without needing
-to install pywatershed requirements yourself. However, it does require
-registering for or loging into WholeTale. WholeTale is an NSF funded project and
-supports logins from many institutions, e.g. the USGS, and you may not need to
-register.
+may be expected to have some issues until they are added to testing. In
+`examples/developer/` there are notebooks of interest to developers who may want
+to learn about running the software tests.
 
-In `examples/developer/` there are notebooks of interest to developers who may
-want to learn about running the software tests.
+
+The notebooks may be run on [WholeTale](https://wholetale.org/).  WholeTale is a
+quick and easy way to get started without needing to install pywatershed
+requirements yourself. However, it does require registering for or loging into
+WholeTale. WholeTale is an NSF funded project and supports logins from many
+institutions, e.g. the USGS, and you may not need to register.
+
+There are WholeTale containers for both the `main` and `develop` branches.
+
+- [WholeTale: pywatershed release/main
+- repository](https://dashboard.wholetale.org/run/649fa6c2a887f48b9f172e99?tab=metadata)
+- [WholeTale: pywatershed develop
+- repository](https://dashboard.wholetale.org/run/649f1d86a887f48b9f172aa7?tab=metadata)
+
+These containers will open jupyter-lab in the root of the repository. Navigate
+to `examples` and then select the notebook you'd like to open and run. The
+`develop` container may not alwayss be up-to-date with the repository `develop`
+branch. To catch it up, go to the Launcher in jupyter-lab and select a bash
+console.
+
+``` cd /home/jovyan/work/workspace git reset --hard # unless you have changes to
+commit git pull origin ```
+
 
 ## Overview of Repository Contents
 
