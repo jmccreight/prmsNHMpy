@@ -13,3 +13,6 @@ prune reference
 prune resources
 prune test_data
 include pyproject.toml
+include pywatershed/data/drb_2yr/*.nc
+include pywatershed/data/drb_2yr/*.param
+include pywatershed/data/drb_2yr/*.test
